@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>Ajax with Google App Engine Datastore. mr.mayur.patil@gmail.com</h1>
+	<script>
+		function hello() {
+
+			var xmlhttp = new XMLHttpRequest();
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4) {
+					document.getElementById('ajaxResponse').innerHTML = xmlhttp.responseText;
+					;
+					//alert(xmlhttp.responseText);
+				}
+			}
+
+			var name = document.getElementById('USN');
+
+			var url = "hello?USN=" + name.value + "";
+
+			xmlhttp.open("GET", url, true);
+
+			xmlhttp.send(null);
+		}
+	</script>
+
+
+	<form>
+		<fieldset>
+			<legend>AJAX implementation using Java Script and Servlet</legend>
+			<br /> Enter your USN: <input type="text" id="USN" autofocus placeholder=123 required> <input
+				type="button" value="Greet" onclick="hello();">
+		</fieldset>
+		<div id="ajaxResponse"></div>
+	</form>
+
+</body>
+</html>
